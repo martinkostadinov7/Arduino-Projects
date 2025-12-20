@@ -58,11 +58,16 @@ void loop() {
       digitalWrite(greenLed, 1);
       tone(buzzer, 622);
       delay(500);
-      setNewPassword();
-      digitalWrite(greenLed, 0);
       noTone(buzzer);
+      setNewPassword();
+      digitalWrite(greenLed, 1);
+      tone(buzzer, 622);
+      delay(100);
+      tone(buzzer, 726);
+      delay(500);
+      noTone(buzzer);
+      digitalWrite(greenLed, 0);
       delay(50);
-      lock();
     }
     else{
       combination[index] = customKey;
